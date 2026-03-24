@@ -1,0 +1,66 @@
+LINGUAGEM PYTHON
+
+total_compra = 0
+total_itens = 0
+quantidade_produtos = 0
+
+print("--- Sistema de Compras (Digite 0 no preço para encerrar) ---")
+
+while True:
+    preco = float(input("\nPreço do produto: R$ "))
+    
+    if preco == 0:
+        break
+        
+    quantidade = int(input("Quantidade deste produto: "))
+    
+    total_compra += (preco * quantidade)
+    total_itens += quantidade
+    quantidade_produtos += 1 # Contador para o cálculo da média de preços unitários
+
+print("-" * 40)
+print(f"Valor total da compra: R$ {total_compra:.2f}")
+print(f"Quantidade total de itens: {total_itens}")
+
+if quantidade_produtos > 0:
+    # Média baseada nos preços unitários diferentes inseridos
+    preco_medio = total_compra / total_itens
+    print(f"Preço médio por item: R$ {preco_medio:.2f}")
+
+LINGUAGEM C
+
+#include <stdio.h>
+
+int main() {
+    float preco, total_compra = 0;
+    int quantidade, total_itens = 0, produtos_distintos = 0;
+
+    printf("--- Sistema de Compras (Digite 0 no preco para encerrar) ---\n");
+
+    while (1) {
+        printf("\nPreco do produto: R$ ");
+        scanf("%f", &preco);
+
+        if (preco == 0) {
+            break;
+        }
+
+        printf("Quantidade deste produto: ");
+        scanf("%d", &quantidade);
+
+        total_compra += (preco * quantidade);
+        total_itens += quantidade;
+        produtos_distintos++;
+    }
+
+    printf("\n----------------------------------------\n");
+    printf("Valor total da compra: R$ %.2f\n", total_compra);
+    printf("Quantidade total de itens: %d\n", total_itens);
+
+    if (total_itens > 0) {
+        float preco_medio = total_compra / total_itens;
+        printf("Preco medio por item: R$ %.2f\n", preco_medio);
+    }
+
+    return 0;
+}

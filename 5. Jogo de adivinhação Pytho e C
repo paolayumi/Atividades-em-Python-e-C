@@ -1,0 +1,47 @@
+LINGUAGEM PYTHON
+
+numero_secreto = 37
+tentativas = 0
+acertou = False
+
+print("--- Jogo de Adivinhação ---")
+
+while not acertou:
+    palpite = int(input("Tente adivinhar o número: "))
+    tentativas += 1
+    
+    if palpite == numero_secreto:
+        print(f"Parabéns! Você acertou em {tentativas} tentativas.")
+        acertou = True
+    elif palpite > numero_secreto:
+        print("Muito alto! Tente novamente.")
+    else:
+        print("Muito baixo! Tente novamente.")
+
+LINGUAGEM C
+
+#include <stdio.h>
+
+int main() {
+    int numero_secreto = 37;
+    int palpite, tentativas = 0;
+
+    printf("--- Jogo de Adivinhacao ---\n");
+
+    do {
+        printf("Tente adivinhar o numero: ");
+        scanf("%d", &palpite);
+        tentativas++;
+
+        if (palpite == numero_secreto) {
+            printf("Parabens! Voce acertou em %d tentativas.\n", tentativas);
+        } else if (palpite > numero_secreto) {
+            printf("Muito alto! Tente novamente.\n");
+        } else {
+            printf("Muito baixo! Tente novamente.\n");
+        }
+
+    } while (palpite != numero_secreto);
+
+    return 0;
+}

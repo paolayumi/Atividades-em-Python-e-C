@@ -1,0 +1,46 @@
+LINGUAGEM PYTHON
+
+valor_inicial = float(input("Valor inicial do investimento: R$ "))
+taxa_juros = float(input("Taxa de juros anual (%): "))
+anos = int(input("Número de anos: "))
+
+saldo = valor_inicial
+
+print("\n--- Evolução do Investimento ---")
+for ano in range(1, anos + 1):
+    # Calcula o juro sobre o saldo atual e atualiza o saldo
+    saldo += saldo * (taxa_juros / 100)
+    print(f"Ano {ano}: R$ {saldo:.2f}")
+
+print(f"\nTotal após {anos} anos: R$ {saldo:.2f}")
+
+LINGUAGEM C 
+
+#include <stdio.h>
+
+int main() {
+    double valor_inicial, taxa_juros, saldo;
+    int anos;
+
+    printf("Valor inicial do investimento: R$ ");
+    scanf("%lf", &valor_inicial);
+
+    printf("Taxa de juros anual (%%): ");
+    scanf("%lf", &taxa_juros);
+
+    printf("Numero de anos: ");
+    scanf("%d", &anos);
+
+    saldo = valor_inicial;
+
+    printf("\n--- Evolucao do Investimento ---\n");
+    for (int i = 1; i <= anos; i++) {
+        // Atualiza o saldo com os juros
+        saldo = saldo + (saldo * (taxa_juros / 100));
+        printf("Ano %d: R$ %.2f\n", i, saldo);
+    }
+
+    printf("\nTotal apos %d anos: R$ %.2f\n", anos, saldo);
+
+    return 0;
+}

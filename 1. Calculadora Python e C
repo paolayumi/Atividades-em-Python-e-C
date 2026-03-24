@@ -1,0 +1,104 @@
+LINGUAGEM PYTHON
+
+# Calculadora de vários números
+
+# 1. Pergunta quantos números o usuário quer digitar
+while True:
+    try:
+        quhttps://www.onlinegdb.com/edit/kbVE4gOqy7#editor_1antidade = int(input("Quantos números você deseja digitar? "))
+        if quantidade > 0:
+            break
+        else:
+            print("Por favor, digite um número maior que zero.")
+    except ValueError:
+        print("Entrada inválida. Digite um número inteiro.")
+
+# 2. Lê os números e guarda as informações necessárias
+numeros = []
+soma = 0
+
+print(f"\nDigite os {quantidade} números:")
+
+for i in range(quantidade):
+    while True:
+        try:
+            num = float(input(f"Número {i+1}: "))
+            numeros.append(num)
+            soma += num
+            break
+        except ValueError:
+            print("Por favor, digite um número válido.")
+
+# 3. Calcula os resultados
+if numeros:  # só faz sentido se tiver pelo menos 1 número
+    media = soma / quantidade
+    maior = max(numeros)
+    menor = min(numeros)
+
+    # 4. Mostra o resultado
+    print("\n" + "="*40)
+    print("      RESULTADOS")
+    print("="*40)
+    print(f"Quantidade de números: {quantidade}")
+    print(f"Soma total:            {soma:.2f}")
+    print(f"Média:                 {media:.2f}")
+    print(f"Maior número:          {maior:.2f}")
+    print(f"Menor número:          {menor:.2f}")
+    print("="*40)
+
+    # Mostra também a lista (opcional, mas ajuda a visualizar)
+    print("\nNúmeros digitados:", numeros)
+else:
+    print("Nenhum número foi digitado.")
+    
+    LINGUAGEM C
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    double numero, soma = 0, media, maior, menor;
+
+    printf("Quantos numeros voce deseja digitar? ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Quantidade invalida.\n");
+        return 1;
+    }
+
+    for (i = 1; i <= n; i++) {
+        printf("Digite o %dº numero: ", i);
+        scanf("%lf", &numero);
+
+        soma += numero;
+
+        if (i == 1) {
+            maior = numero;
+            menor = numero;
+        } else {
+            if (numero > maior) maior = numero;
+            if (numero < menor) menor = numero;
+        }
+    }
+
+    media = soma / n;
+
+    printf("\n--- Resultados ---\n");
+    printf("Soma total: %.2f\n", soma);
+    printf("Media: %.2f\n", media);
+    printf("Maior numero: %.2f\n", maior);
+    printf("Menor numero: %.2f\n", menor);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+.

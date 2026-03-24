@@ -1,0 +1,44 @@
+LINGUAGEM PYTHON
+
+while True:
+    # Solicita o número da tabuada
+    num = int(input("Digite um número para ver a tabuada: "))
+    
+    print(f"\nTabuada do {num}:")
+    for i in range(1, 11):
+        print(f"{num} x {i} = {num * i}")
+    
+    # Pergunta se deseja continuar
+    continuar = input("\nDeseja ver outro número? (1 para Sim / 0 para Não): ")
+    
+    if continuar != '1':
+        print("Encerrando o programa...")
+        break
+
+LINGUAGEM C
+
+#include <stdio.h>
+
+int main() {
+    int num, opcao;
+
+    do {
+        // Solicita o número
+        printf("Digite um numero para ver a tabuada: ");
+        scanf("%d", &num);
+
+        printf("\nTabuada do %d:\n", num);
+        for(int i = 1; i <= 10; i++) {
+            printf("%d x %d = %d\n", num, i, num * i);
+        }
+
+        // Pergunta se deseja continuar
+        printf("\nDeseja ver outro numero? (1 para Sim / 0 para Nao): ");
+        scanf("%d", &opcao);
+        printf("\n");
+
+    } while(opcao == 1);
+
+    printf("Encerrando o programa...\n");
+    return 0;
+}

@@ -1,0 +1,65 @@
+LINGUAGEM PYTHON
+
+cont_total = 0
+positivos = 0
+negativos = 0
+soma_total = 0
+
+print("Digite os números (digite 0 para sair):")
+
+while True:
+    num = float(input("Número: "))
+    
+    if num == 0:
+        break  # Sai do laço imediatamente
+    
+    cont_total += 1
+    soma_total += num
+    
+    if num > 0:
+        positivos += 1
+    else:
+        negativos += 1
+
+print("-" * 30)
+print(f"Total de números digitados: {cont_total}")
+print(f"Quantidade de positivos: {positivos}")
+print(f"Quantidade de negativos: {negativos}")
+print(f"Soma total: {soma_total}")
+
+LINGAGEM C
+
+#include <stdio.h>
+
+int main() {
+    float num, soma_total = 0;
+    int cont_total = 0, positivos = 0, negativos = 0;
+
+    printf("Digite os numeros (digite 0 para sair):\n");
+
+    while (1) { // Laço infinito
+        printf("Numero: ");
+        scanf("%f", &num);
+
+        if (num == 0) {
+            break; // Sai do laço se for zero
+        }
+
+        cont_total++;
+        soma_total += num;
+
+        if (num > 0) {
+            positivos++;
+        } else {
+            negativos++;
+        }
+    }
+
+    printf("\n------------------------------\n");
+    printf("Total de numeros digitados: %d\n", cont_total);
+    printf("Quantidade de positivos: %d\n", positivos);
+    printf("Quantidade de negativos: %d\n", negativos);
+    printf("Soma total: %.2f\n", soma_total);
+
+    return 0;
+}
